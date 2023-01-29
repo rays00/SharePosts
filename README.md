@@ -22,6 +22,7 @@ docker compose up --build
 After this step you can start the Angular app by navigating to "SharePosts" directory and
 
 ```
+npm install
 npm start
 ```
 
