@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<div class="col-md-6 mx-auto">
+  <form [formGroup]="registerForm" (ngSubmit)="registerOnSubmit()">
+    <h2>Register</h2>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" formControlName="email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      <div *ngIf="form.email.touched && form.email.invalid">
+        <small>Not a valid email address.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter name" formControlName="name">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+      <div *ngIf="form.password.touched && form.password.invalid">
+        <small>Password must contain 8 alphanumeric characters.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Confirm Password</label>
+      <input type="password" class="form-control" id="confirm-password" placeholder="Confirm Password" formControlName="confirmPassword">
+      <div *ngIf="form.password.touched && form.password.invalid">
+        <small>Password must contain 8 alphanumeric characters.</small>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Submit</button>
+  </form>
+</div>
+

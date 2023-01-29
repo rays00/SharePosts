@@ -1,0 +1,21 @@
+<div class="modal-header">
+  <h4 class="modal-title">Create a new post</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<form [formGroup]="postForm" (ngSubmit)="postOnSubmit()">
+  <div class="modal-body">
+      <div class="input-group mb-3">
+        <input type="text" formControlName="title" class="form-control" placeholder="Title" aria-label="Title">
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Description</span>
+        </div>
+        <textarea class="form-control" formControlName="description" aria-label="Description"></textarea>
+      </div>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" [disabled]="!postForm.valid" class="btn btn-outline-dark" (click)="activeModal.close('Save click')">Save</button>
+  </div>
+</form>
+

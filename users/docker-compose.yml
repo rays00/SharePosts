@@ -1,0 +1,28 @@
+services:
+ users:
+   build: .
+   ports:
+     - 3000:3000
+   environment:
+     - SERVER_PORT=3000
+   volumes:
+     - ./:/app
+     - /app/node_modules
+   command: npm start
+ posts:
+  build: ../posts
+  ports:
+    - 3001:3001
+  environment:
+    - SERVER_PORT=3001
+  volumes:
+    - ../posts:/app
+    - /app/node_modules
+  command: npm start
+ nginx:
+  build: ../nginx
+  ports:
+  - '80:80'
+  depends_on:
+  - users
+  - posts

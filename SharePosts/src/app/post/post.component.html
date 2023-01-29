@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-header">
+    <span>{{ post.userId.name }}</span>
+    <span>{{ post.time | date:'HH:mm dd-MM-YYYY' }}</span>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ post.title }}</h5>
+    <p class="card-text">{{ post.description }}</p>
+    <div class="actions" *ngIf="ownPost(post.userId._id)">
+      <button type="button" class="btn btn-primary mr-1" (click)="editPost(post)" data-toggle="modal" data-target="#exampleModalLong">Edit</button>
+      <button type="button" class="btn btn-danger" (click)="deletePost(post._id)">Delete</button>
+    </div>
+  </div>
+</div>

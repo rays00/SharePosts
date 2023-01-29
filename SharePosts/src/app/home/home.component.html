@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+<div class="col-md-3 mr-5 mt-2" *ngIf="isLoggedIn()">
+  <button type="button" class="btn btn-dark" (click)="openModal()">+</button>
+</div>
+
+<div class="cards-wrapper mt-3">
+  <div *ngFor="let post of posts" class="col-md-6 mx-auto mb-4">
+    <app-post [post]="post"></app-post>
+  </div>
+  <div class="col-md-6 mx-auto empty" *ngIf="posts && posts.length === 0">
+    No posts
+  </div>
+</div>
