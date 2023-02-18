@@ -1,4 +1,4 @@
-# SharePosts
+# SharePosts - update
 Basic social network
 
 SharePosts is a simple social network app built with Node.js, Angular, MongoDB.
